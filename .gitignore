@@ -1,0 +1,12 @@
+node_modules/
+dist/
+
+.evv
+uploads/
+
+src/controllers/
+src/middleware/
+
+
+src/routes/
+src/services/

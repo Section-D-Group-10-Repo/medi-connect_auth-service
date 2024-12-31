@@ -1,0 +1,4 @@
+DATA_AGRRIGATOR => compitator_import_data => CREATE
+
+last 3 days transactions/ compitator_import_datas
+

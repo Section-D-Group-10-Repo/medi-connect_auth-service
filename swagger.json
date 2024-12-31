@@ -1,0 +1,196 @@
+{
+  "swagger": "2.0",
+  "schemes": ["http", "https"],
+  "host": "localhost:4040/",
+  "info": {
+    "title": "Perfit ERP",
+    "description": "API documentation for the Node.js backend",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Auth",
+      "description": "Endpoints related to authentication"
+    },
+    {
+      "name": "Users",
+      "description": "Endpoints for managing users"
+    },
+    {
+      "name": "Products",
+      "description": "Endpoints for managing products"
+    }
+  ],
+  "paths": {
+    "/api/v1/auth/sign-up": {
+      "post": {
+        "summary": "Sign Up",
+        "description": "Create a user.",
+        "tags": ["Auth"],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "payload",
+            "in": "body",
+            "description": "To sign up full-name, email and password required.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "fullName": {
+                  "type": "string",
+                  "example": "Nesredin Getahun"
+                },
+                "email": {
+                  "type": "string",
+                  "format": "email",
+                  "example": "hassen@gmail.com"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "12345"
+                }
+              },
+              "required": ["fullName", "email", "password"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User signed up successfully"
+          },
+          "400": {
+            "description": "Invalid data provided from client."
+          }
+        }
+      }
+    },
+    "/api/v1/auth/sign-in": {
+      "post": {
+        "summary": "Sign In",
+        "description": "User sign in.",
+        "tags": ["Auth"],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "payload",
+            "in": "body",
+            "description": "To sign in email and password required.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "format": "email",
+                  "example": "hassen@gmail.com"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "12345"
+                }
+              },
+              "required": ["email", "password"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User signed in successfully"
+          },
+          "400": {
+            "description": "Invalid data provided from client."
+          }
+        }
+      }
+    },
+    "/api/v1/auth/role": {
+      "post": {
+        "summary": "Update user role",
+        "description": "Used by admin to update a user role",
+        "tags": ["Auth"],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "name": "payload",
+            "in": "body",
+            "description": "To update user role admin privilage,   userId & role required.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "type": "string",
+                  "example": "cm4qt0sjm0000s2n7qq9c97fc"
+                },
+                "role": {
+                  "type": "string",
+                  "example": "SALES_PERSON"
+                }
+              },
+              "required": ["userId", "role"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User role updated successfully"
+          },
+          "400": {
+            "description": "Invalid data provided from client."
+          }
+        }
+      }
+    },
+    "/api/v1/users": {
+      "get": {
+        "summary": "Get all users",
+        "description": "Used by admin to get all users",
+        "tags": ["Users"],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+
+        "responses": {
+          "200": {
+            "description": "Users data retrived successfully"
+          },
+          "400": {
+            "description": "Unauthrization failed"
+          }
+        }
+      }
+    },
+    "/api/v1/users/{id}": {
+      "get": {
+        "summary": "Get all users",
+        "description": "Used by admin to get all users",
+        "tags": ["Users"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the user to retrieve.",
+            "schema": {
+              "type": "string",
+              "example": "cm4pnfoxj0000s2eizs2cuqlc"
+            }
+          }
+        ],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Users data retrived successfully"
+          },
+          "400": {
+            "description": "Unauthrization failed"
+          }
+        }
+      }
+    }
+  }
+}
