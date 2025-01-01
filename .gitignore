@@ -5,7 +5,6 @@ dist/
 uploads/
 
 src/controllers/
-src/middleware/
 
 
 src/routes/
