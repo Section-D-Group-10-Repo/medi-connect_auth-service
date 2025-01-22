@@ -13,6 +13,7 @@
   "description": "A modern Node.js TypeScript template with essential configurations for building RESTful APIs. Includes support for environment variable management, logging, and development tooling.",
   "dependencies": {
     "@prisma/client": "^6.0.1",
+    "amqplib": "^0.10.5",
     "axios": "^1.7.9",
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.7",
@@ -29,6 +30,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/amqplib": "^0.10.6",
     "@types/bcrypt": "^5.0.2",
     "@types/cookie-parser": "^1.4.8",
     "@types/cors": "^2.8.17",

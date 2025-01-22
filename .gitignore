@@ -4,8 +4,11 @@ dist/
 .evv
 uploads/
 
+<<<<<<< Updated upstream
 src/controllers/
 
 
 src/routes/
 #src/services/
+=======
+>>>>>>> Stashed changes

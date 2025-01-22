@@ -15,7 +15,7 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(middlewares.limiter);
-app.use(cookieParser(ENV.COOKIE_SECRET)); // Use a secret key for signing
+app.use(cookieParser()); 
 
 app.use("/uploads", express.static(path.join(__dirname, "..", "uploads")));
 app.use("/", routes.authRouter);

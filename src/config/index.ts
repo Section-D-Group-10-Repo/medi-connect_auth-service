@@ -1,5 +1,5 @@
 import ENV from "./env";
 
-const COOKIE_EXPIRATION = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+const COOKIE_EXPIRATION = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
 
 export { ENV, COOKIE_EXPIRATION };
